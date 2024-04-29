@@ -4,13 +4,14 @@
     --green: #27ae60;
     --black: #192a56;
     --light-color: #666;
-    --box-shadow: .5rem 1.5rem rgba(0,0,0,.1);
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
 }
 
 *{
     font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     text-decoration: none;
     outline: none;
     border: none;
@@ -20,7 +21,7 @@
 
 html{
     font-size: 62.5%;
-    overflow: hidden;
+    overflow-x: hidden;
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
 
@@ -58,14 +59,14 @@ header{
     z-index: 1000;
     box-shadow: var(--box-shadow);
 }
-.navbar a{
+header .navbar a{
     font-size: 1.7rem;
     border-radius: .5rem;
     padding: .5rem 1.5rem;
     color: var(--light-color);
 }
-.navbar a.active,
-.navbar a:hover{
+header .navbar a.active,
+header .navbar a:hover{
     color: #fff;
     background: var(--green);
 }
@@ -98,12 +99,15 @@ header .icons #menu-bars{
 
 /* media query */
 
-@media(max-width:991px){
+@media (max-width:991px){
     html{
         font-size: 55%;
     }
     header{
         padding: 1rem 2rem;
+    }
+    section{
+        padding: 2rem;
     }
 }
 
@@ -118,7 +122,7 @@ header .icons #menu-bars{
         border-top: .1rem solid rgba(0,0,0,.2);
         border-bottom: .1rem solid rgba(0,0,0,.2);
         padding: 1rem;
-        clip-path: polygon(0 0, 100% 0,100% 0, 0 0);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
     header .navbar.active{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -133,6 +137,10 @@ header .icons #menu-bars{
     .search-form .search-box{
         width: 90%;
         margin: 0 1rem;
+    }
+
+    .home .home-slider  .slide .content h3{
+        font-size: 5rem;
     }
 }
 @media(max-width:991px){
@@ -192,7 +200,9 @@ header .icons #menu-bars{
 }
 
 
-.home .home-slider .slide{
+/* slideshow */
+
+.home .home-slider  .slide{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -211,18 +221,24 @@ header .icons #menu-bars{
 .home .home-slider .slide .image img{
     width: 100%;
 }
-
-.home .home-slider .slide .content span{
+.home .home-slider  .slide .content span{
     color: var(--green);
     font-size: 2.5rem;
 }
-.home .home-slider .slide .content h3{
+.home .home-slider  .slide .content h3{
     color: var(--black);
     font-size: 7rem;
 }
-.home .home-slider .slide .content p{
+.home .home-slider  .slide .content p{
     color: var(--light-color);
     font-size: 2.2rem;
     padding: .5rem 0;
     line-height: 1.5;
 }
+
+.swiper-pagination-bullet-active{
+    background: var(--green);
+}
+
+
+
